@@ -35,6 +35,7 @@ ios/
 linux/
 macos/
 windows/
+web/
 
 # Symbolication related
 app.*.symbols
