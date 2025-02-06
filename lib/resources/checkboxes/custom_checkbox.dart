@@ -20,16 +20,24 @@ class CustomCheckbox extends StatelessWidget {
     return Row(
       children: [
         Obx(() =>
-          Checkbox(
-            value: isChck.value,
-            onChanged: (value) { isChck.value = value!; },
-            activeColor: AppColor.success,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50),
+          SizedBox(
+            width: 48,
+            height: 48,
+            child: Checkbox(
+              value: isChck.value,
+              onChanged: (value) { isChck.value = value!; },
+              activeColor: AppColor.success,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50),
+              ),
+              semanticLabel: text,
             ),
           ),
         ),
-        Text(text),
+        Semantics(
+          label: text,
+          child: Text(text),
+        ),
       ],
     );
   }
