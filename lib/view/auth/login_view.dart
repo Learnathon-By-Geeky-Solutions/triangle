@@ -8,8 +8,8 @@ class LoginView extends StatelessWidget {
 
     return const Scaffold(
       body: Center(
-        child: Text("Nothing's here yet"),
-      ),
+        child: Text("Welcome"),
+      )
     );
   }
 }
