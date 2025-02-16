@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/colors/app_colors.dart';
+import '../../utils/constants/app_colors.dart';
 
 class CustomFilledButton extends StatelessWidget {
   final String text;
@@ -20,8 +20,8 @@ class CustomFilledButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      width: 200,
+      height: 48,
+      width: 144,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
@@ -30,8 +30,8 @@ class CustomFilledButton extends StatelessWidget {
       child: Text(text,
         style: TextStyle(
           color: textColor,
-          fontSize: 24,
-          fontWeight: FontWeight.w700
+          fontSize: 16,
+          fontWeight: FontWeight.w600
         ),
       ),
     );

@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../utils/colors/app_colors.dart';
 
 class CustomTextFormField extends StatelessWidget {
 
@@ -33,28 +32,12 @@ class CustomTextFormField extends StatelessWidget {
         validator: validator,
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: const TextStyle(
-            color: AppColor.textDarkGray
-          ),
-          filled: true,
-          fillColor: AppColor.surface,
           suffixIcon: isPassField.value 
             ? IconButton(
               icon: Icon(passwordVisibility.value ? CupertinoIcons.eye_fill : CupertinoIcons.eye_slash_fill, 
               size: 18,), onPressed: () { passwordVisibility.value = !passwordVisibility.value; },
             ) 
-            : null,  
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5),
-            borderSide: BorderSide.none
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5),
-            borderSide: const BorderSide(
-                color: AppColor.border,
-                width: 2
-              )
-          ),
+            : null,
         ),
       ),
     );

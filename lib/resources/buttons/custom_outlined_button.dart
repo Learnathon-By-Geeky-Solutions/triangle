@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/colors/app_colors.dart';
+import '../../utils/constants/app_colors.dart';
 
 class CustomOutlinedButton extends StatelessWidget {
   final String text;
