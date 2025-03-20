@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:triangle/view/auth/login_view.dart';
 
 import 'utils/theme/theme.dart';
+import 'view/auth/register_view.dart';
 
 class LittleSteps extends StatelessWidget {
   const LittleSteps({super.key});
@@ -15,7 +16,7 @@ class LittleSteps extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: const LoginView(),
+      home: const RegisterView(),
     );
   }
 }
