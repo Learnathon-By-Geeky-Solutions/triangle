@@ -1,8 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 
 import '../../utils/constants/app_colors.dart';
 import '../../utils/constants/sizes.dart';
+
+
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
@@ -67,7 +71,7 @@ class RegisterView extends StatelessWidget {
                     ),
                     Row(children: [
                       Checkbox(value: true, onChanged: (value) {}),
-                      const Text("I agree to the terms and conditions")
+                      Text("termsAndConditions".tr)
                     ]),
                     const SizedBox(height: Sizes.spaceBtwSections),
                   ],
