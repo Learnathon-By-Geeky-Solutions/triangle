@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:triangle/utils/theme/extentions/custom_color_extention.dart';
 
 
 import '../../utils/constants/app_colors.dart';
@@ -79,7 +80,11 @@ class RegisterView extends StatelessWidget {
                 Column(
                   children: [
                     FilledButton(
-                        onPressed: () {}, child: const Text("Register")),
+                        onPressed: () {},
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStateProperty.all(Theme.of(context).extension<CustomColorExtention>()?.customPrimaryColor),
+                        ),
+                        child: const Text("Register")),
                     const SizedBox(height: Sizes.spaceBtwSections),
                     const Text(
                       "Already have an account?",
