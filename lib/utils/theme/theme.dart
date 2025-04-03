@@ -5,6 +5,7 @@ import 'package:triangle/utils/theme/widget_themes/text_field_theme.dart';
 import 'package:triangle/utils/theme/widget_themes/text_theme.dart';
 
 import '../constants/app_colors.dart';
+import 'extentions/custom_color_extention.dart';
 import 'widget_themes/outlined_button_theme.dart';
 
 class AppTheme {
@@ -21,6 +22,9 @@ class AppTheme {
     outlinedButtonTheme: AppOutlineButtonTheme.lightOutlinedButtonTheme,
     checkboxTheme: AppCheckboxTheme.lightCheckboxTheme,
 
+    extensions: [
+      CustomColorExtention(customPrimaryColor: AppColor.primary),
+    ]
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -34,5 +38,9 @@ class AppTheme {
     filledButtonTheme: AppFilledButtonTheme.darkfilledButtonTheme,
     outlinedButtonTheme: AppOutlineButtonTheme.darkOutlinedButtonTheme,
     checkboxTheme: AppCheckboxTheme.darkCheckboxTheme,
+
+    extensions: [
+      CustomColorExtention(customPrimaryColor: AppColor.primaryBright),
+    ]
   );
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:triangle/utils/constants/app_colors.dart';
-import 'package:triangle/utils/constants/sizes.dart';
+
+import '../../constants/app_colors.dart';
+import '../../constants/sizes.dart';
 
 class AppFilledButtonTheme {
   
