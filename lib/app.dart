@@ -9,7 +9,6 @@ import 'view/auth/register_view.dart';
 class LittleSteps extends StatelessWidget {
   const LittleSteps({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
