@@ -22,6 +22,20 @@ class AppTextFormFieldTheme {
         width: 2,
       )
     ),
+    errorBorder: const OutlineInputBorder().copyWith(
+      borderRadius: BorderRadius.circular(Sizes.inputFieldRadius),
+      borderSide: const BorderSide(
+        color: AppColor.error,
+        width: 2,
+      )
+    ),
+    focusedErrorBorder: const OutlineInputBorder().copyWith(
+      borderRadius: BorderRadius.circular(Sizes.inputFieldRadius),
+      borderSide: const BorderSide(
+        color: AppColor.error,
+        width: 2,
+      )
+    )
   );
 
 
@@ -42,5 +56,19 @@ class AppTextFormFieldTheme {
         width: 2,
       )
     ),
+    errorBorder: const OutlineInputBorder().copyWith(
+      borderRadius: BorderRadius.circular(Sizes.inputFieldRadius),
+      borderSide: const BorderSide(
+        color: AppColor.error,
+        width: 2,
+      )
+    ),
+    focusedErrorBorder: const OutlineInputBorder().copyWith(
+      borderRadius: BorderRadius.circular(Sizes.inputFieldRadius),
+      borderSide: const BorderSide(
+        color: AppColor.error,
+        width: 2,
+      )
+    )
   );
 }
