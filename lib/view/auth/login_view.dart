@@ -11,7 +11,11 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
+    var passwordVisible = false.obs;
 
     return Scaffold(
         body: Padding(
@@ -32,15 +36,27 @@ class LoginView extends StatelessWidget {
               child: Column(children: [
                 TextFormField(
                   decoration: const InputDecoration(hintText: "Email"),
+                  controller: emailController,
                   validator: (value) => AppValidator.validateEmail(value),
                 ),
                 const SizedBox(height: Sizes.spaceBtwInputFields),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    hintText: "Password",
-                    suffixIcon: Icon(CupertinoIcons.eye_slash),
+                Obx(() =>
+                  TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Password",
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                         passwordVisible.value ? CupertinoIcons.eye_fill : CupertinoIcons.eye_slash,
+                        ),
+                        onPressed: () {
+                          passwordVisible.value = !passwordVisible.value;
+                        },
+                      ),
+                    ),
+                    controller: passwordController,
+                    obscureText: !passwordVisible.value,
+                    validator: (value) => AppValidator.validatePassword(value),
                   ),
-                  validator: (value) => AppValidator.validatePassword(value),
                 ),
                 // const SizedBox(height: Sizes.spaceBtwItems),
                 Row(
@@ -60,9 +76,9 @@ class LoginView extends StatelessWidget {
                         ))
                   ],
                 ),
-        
+
                 const SizedBox(height: Sizes.spaceBtwSections),
-        
+
                 FilledButton(
                   onPressed: () {
                     if (formKey.currentState?.validate() ?? false) {
@@ -71,16 +87,15 @@ class LoginView extends StatelessWidget {
                   },
                   child: const Text("Login"),
                 ),
-        
+
                 const SizedBox(height: Sizes.spaceBtwSections),
-        
+
                 const Text(
                   "Don't have an account?",
                   style: TextStyle(color: AppColor.textSecondary),
                 ),
                 const SizedBox(height: Sizes.spaceBtwItems),
-                OutlinedButton(
-                    onPressed: () {}, child: const Text("Register")),
+                OutlinedButton(onPressed: () {}, child: const Text("Register")),
                 const SizedBox(height: Sizes.spaceBtwSections),
               ]),
             ),
