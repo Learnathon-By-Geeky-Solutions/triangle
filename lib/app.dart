@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:triangle/utils/constants/app_colors.dart';
-import 'package:triangle/view/auth/login_view.dart';
 
 import 'bindings/general_bindings.dart';
 import 'utils/theme/theme.dart';
 import 'utils/translations/localization_service.dart';
-import 'view/auth/register_view.dart';
 
 class LittleSteps extends StatelessWidget {
   const LittleSteps({super.key});

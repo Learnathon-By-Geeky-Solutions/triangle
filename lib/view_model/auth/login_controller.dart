@@ -33,6 +33,7 @@ class LoginController extends GetxController {
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
         FullScreenLoader.stopLoading();
+        AppLoaders.errorSnackBar(title: "No Internet", message: "Please check your internet connection.");
         return;
       }
       
@@ -46,7 +47,7 @@ class LoginController extends GetxController {
         deviceStorage.write("REMEMBER_ME_PASSWORD", passwordController.text.trim());
       }
       
-      final userCredential = await AuthenticationRepository.instance.loginWithEmailAndPassword(
+      await AuthenticationRepository.instance.loginWithEmailAndPassword(
         emailController.text.trim(),
         passwordController.text.trim(),
       );
