@@ -22,6 +22,13 @@
 <h2>Supporting Parents in Tracking and Nurturing Baby's Growth</h2>
 </div>
 
+## 📌 Tools & Technologies
+![Flutter](https://img.shields.io/badge/Flutter-3.10-blue?logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-3.0-blue?logo=dart&logoColor=white)
+![GetX](https://img.shields.io/badge/GetX-State_Management-purple?logo=getx&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-PostgreSQL-brightgreen?logo=firebase)
+![Android Studio](https://img.shields.io/badge/Android_Studio-Giraffe-green?logo=androidstudio&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Project Description
 Little Steps is a mobile app designed to help parents track and support their baby's growth. It offers tools to monitor vaccines, sleep, feeding, and milestones, all in one place. With timely reminders, expert parenting advice, and a supportive community, Little Steps simplifies parenting and ensures babies get the care they need.
