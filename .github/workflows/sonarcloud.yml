@@ -34,6 +34,20 @@ jobs:
       # - name: Run tests with coverage
       #   run: flutter test --coverage
 
+      - name: Create .env file for SonarCloud
+        run: |
+          echo "ANDROID_API_KEY=${{ secrets.ANDROID_API_KEY }}" > .env
+          echo "ANDROID_APP_ID=${{ secrets.ANDROID_APP_ID }}" >> .env
+          echo "ANDROID_MESSAGING_SENDER_ID=${{ secrets.ANDROID_MESSAGING_SENDER_ID }}" >> .env
+          echo "ANDROID_PROJECT_ID=${{ secrets.ANDROID_PROJECT_ID }}" >> .env
+          echo "ANDROID_STORAGE_BUCKET=${{ secrets.ANDROID_STORAGE_BUCKET }}" >> .env
+          echo "IOS_API_KEY=${{ secrets.IOS_API_KEY }}" >> .env
+          echo "IOS_APP_ID=${{ secrets.IOS_APP_ID }}" >> .env
+          echo "IOS_MESSAGING_SENDER_ID=${{ secrets.IOS_MESSAGING_SENDER_ID }}" >> .env
+          echo "IOS_PROJECT_ID=${{ secrets.IOS_PROJECT_ID }}" >> .env
+          echo "IOS_STORAGE_BUCKET=${{ secrets.IOS_STORAGE_BUCKET }}" >> .env
+          echo "IOS_BUNDLE_ID=${{ secrets.IOS_BUNDLE_ID }}" >> .env
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
