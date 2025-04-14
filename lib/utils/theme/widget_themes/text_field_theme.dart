@@ -44,15 +44,22 @@ class AppTextFormFieldTheme {
     suffixIconColor: AppColor.darkGrey,
     hintStyle: const TextStyle().copyWith(fontSize: Sizes.fontSizeMd, color: AppColor.textSecondary),
     filled: true,
+    focusedBorder: const OutlineInputBorder().copyWith(
+      borderRadius: BorderRadius.circular(Sizes.inputFieldRadius),
+      borderSide: const BorderSide(
+        color: AppColor.border,
+        width: 2,
+      )
+    ),
     fillColor: AppColor.surfaceDark,
     enabledBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(Sizes.inputFieldRadius),
       borderSide: BorderSide.none
     ),
-    focusedBorder: const OutlineInputBorder().copyWith(
+    focusedErrorBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(Sizes.inputFieldRadius),
       borderSide: const BorderSide(
-        color: AppColor.border,
+        color: AppColor.error,
         width: 2,
       )
     ),
@@ -63,12 +70,5 @@ class AppTextFormFieldTheme {
         width: 2,
       )
     ),
-    focusedErrorBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(Sizes.inputFieldRadius),
-      borderSide: const BorderSide(
-        color: AppColor.error,
-        width: 2,
-      )
-    )
   );
 }
