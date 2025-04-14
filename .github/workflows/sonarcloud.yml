@@ -31,8 +31,8 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      # - name: Run tests with coverage
-      #   run: flutter test --coverage
+      - name: Run tests with coverage
+        run: flutter test --coverage
 
       - name: Create .env file for SonarCloud
         run: |
@@ -59,6 +59,7 @@ jobs:
             -Dsonar.projectKey=Learnathon-By-Geeky-Solutions_triangle
             -Dsonar.organization=learnathon-by-geeky-solutions
             -Dsonar.sources=lib/
+            -Dsonar.tests=test/
             -Dsonar.java.version=17
             -Dsonar.verbose=true
             -Dsonar.dart.coverage.reportPath=coverage/lcov.info
