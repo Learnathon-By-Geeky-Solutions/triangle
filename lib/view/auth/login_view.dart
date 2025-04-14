@@ -5,17 +5,15 @@ import 'package:triangle/utils/constants/app_colors.dart';
 
 import '../../utils/constants/sizes.dart';
 import '../../utils/validator/app_validator.dart';
+import '../../view_model/auth/login_controller.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    
-    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-    final emailController = TextEditingController();
-    final passwordController = TextEditingController();
-    var passwordVisible = false.obs;
+
+    final controller = Get.put(LoginController());
 
     return Scaffold(
         body: Padding(
@@ -32,11 +30,11 @@ class LoginView extends StatelessWidget {
             ),
             const SizedBox(height: Sizes.spaceBtwSections),
             Form(
-              key: formKey,
+              key: controller.loginFormKey,
               child: Column(children: [
                 TextFormField(
                   decoration: const InputDecoration(hintText: "Email"),
-                  controller: emailController,
+                  controller: controller.emailController,
                   validator: (value) => AppValidator.validateEmail(value),
                 ),
                 const SizedBox(height: Sizes.spaceBtwInputFields),
@@ -46,25 +44,27 @@ class LoginView extends StatelessWidget {
                       hintText: "Password",
                       suffixIcon: IconButton(
                         icon: Icon(
-                         passwordVisible.value ? CupertinoIcons.eye_fill : CupertinoIcons.eye_slash,
+                         controller.passwordVisible.value ? CupertinoIcons.eye_fill : CupertinoIcons.eye_slash,
                         ),
                         onPressed: () {
-                          passwordVisible.value = !passwordVisible.value;
+                          controller.passwordVisible.value = !controller.passwordVisible.value;
                         },
                       ),
                     ),
-                    controller: passwordController,
-                    obscureText: !passwordVisible.value,
+                    controller: controller.passwordController,
+                    obscureText: !controller.passwordVisible.value,
                     validator: (value) => AppValidator.validatePassword(value),
                   ),
                 ),
-                // const SizedBox(height: Sizes.spaceBtwItems),
+                const SizedBox(height: Sizes.spaceBtwInputFields),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(children: [
-                      Checkbox(value: true, onChanged: (value) {}),
-                      const Text("Remember me")
+                      SizedBox(height: 24, width: 24, child: Obx(() => Checkbox(value: controller.rememberMe.value, onChanged: (value) { 
+                        controller.rememberMe.value = value ?? false;
+                      }))),
+                      const Text(" Remember me")
                     ]),
                     TextButton(
                         onPressed: () {},
@@ -81,9 +81,7 @@ class LoginView extends StatelessWidget {
 
                 FilledButton(
                   onPressed: () {
-                    if (formKey.currentState?.validate() ?? false) {
-                      Get.snackbar("Success", "Validated");
-                    }
+                    controller.login();
                   },
                   child: const Text("Login"),
                 ),

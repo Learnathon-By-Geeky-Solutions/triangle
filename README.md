@@ -9,28 +9,12 @@
 ## Mentor
 - ihjohny
 
----
 
 [//]: # (<center><h1>Little Steps <img src="assets/img.png" alt="Project Logo" style="vertical-align: middle; width: 50px;"/></h1></center>)
 
-<h1 align="center"  style="vertical-align: middle;" >
-   Little Steps
- </h1>
+<center><h1>Little Steps </h1></center>
 
-<div align="center">
 
-![Little Steps Logo](https://raw.githubusercontent.com/Learnathon-By-Geeky-Solutions/triangle/feature/auth/assets/images/app_logo.png)
-
-<h2>Supporting Parents in Tracking and Nurturing Baby's Growth</h2>
-</div>
-
-## 📌 Tools & Technologiess
-![Flutter](https://img.shields.io/badge/Flutter-3.10-blue?logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-3.0-blue?logo=dart&logoColor=white)
-![GetX](https://img.shields.io/badge/GetX-State_Management-purple?logo=getx&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-PostgreSQL-brightgreen?logo=firebase)
-![Android Studio](https://img.shields.io/badge/Android_Studio-Giraffe-green?logo=androidstudio&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Project Description
 Little Steps is a mobile app designed to help parents track and support their baby's growth. It offers tools to monitor vaccines, sleep, feeding, and milestones, all in one place. With timely reminders, expert parenting advice, and a supportive community, Little Steps simplifies parenting and ensures babies get the care they need.
