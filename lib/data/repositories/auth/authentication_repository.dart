@@ -3,11 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:triangle/utils/exceptions/firebase_auth_exceptions.dart';
 import 'package:triangle/utils/exceptions/format_exceptions.dart';
 
-import '../../../utils/exceptions/firebase_exceptions.dart';
-import '../../../utils/exceptions/platform_exceptions.dart';
+import '../../../utils/exceptions/app_exceptions.dart';
 import '../../../view/auth/login_view.dart';
 import '../../../view/auth/register_view.dart';
 import '../../../view/home/home_view.dart';
@@ -43,13 +41,13 @@ class AuthenticationRepository extends GetxController {
     try {
       return await _auth.signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
-      throw AppFirebaseAuthException(e.code).message;
+      throw AppFirebaseAuthException(e.code);
     } on FirebaseException catch (e) {
-      throw AppFirebaseException(e.code).message;
+      throw AppFirebaseException(e.code);
     } on FormatException catch (_) {
       throw const AppFormatException();
     } on PlatformException catch (e) {
-      throw AppPlatformException(e.code).message;
+      throw AppPlatformException(e.code);
     } catch (e) {
       throw "An unexpected error occurred. Please try again.";
     }
@@ -60,13 +58,13 @@ class AuthenticationRepository extends GetxController {
     try {
       return await _auth.createUserWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
-      throw AppFirebaseAuthException(e.code).message;
+      throw AppFirebaseAuthException(e.code);
     } on FirebaseException catch (e) {
-      throw AppFirebaseException(e.code).message;
+      throw AppFirebaseException(e.code);
     } on FormatException catch (_) {
       throw const AppFormatException();
     } on PlatformException catch (e) {
-      throw AppPlatformException(e.code).message;
+      throw AppPlatformException(e.code);
     } catch (e) {
       throw "An unexpected error occurred. Please try again.";
     }
