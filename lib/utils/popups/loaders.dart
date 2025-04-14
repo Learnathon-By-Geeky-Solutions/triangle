@@ -17,7 +17,7 @@ class AppLoaders {
           margin: const EdgeInsets.symmetric(horizontal: 30),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
-            color: Get.isDarkMode ? AppColor.darkerGrey.withOpacity(0.9) : AppColor.grey.withOpacity(0.9),
+            color: Get.isDarkMode ? AppColor.darkerGrey.withValues(alpha: 0.9) : AppColor.grey.withValues(alpha: 0.9),
           ),
           child: Center(child: Text(message, style: Theme.of(Get.context!).textTheme.labelLarge)),
         ),
