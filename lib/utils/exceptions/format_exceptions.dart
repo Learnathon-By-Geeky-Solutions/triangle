@@ -29,7 +29,6 @@ class AppFormatException implements Exception {
         return const AppFormatException('The credit card format is invalid. Please enter a valid credit card number.');
       case 'invalid-numeric-format':
         return const AppFormatException('The input should be a valid numeric format.');
-    // Add more cases as needed...
       default:
         return const AppFormatException();
     }
