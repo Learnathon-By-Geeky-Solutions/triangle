@@ -53,7 +53,6 @@ jobs:
 
       - name: Run tests with coverage
         run: flutter test --coverage      
-          sed -i "s|^SF:lib|SF:$PWD/lib|g" coverage/lcov.info
 
       - name: Verify coverage file
         run: |
