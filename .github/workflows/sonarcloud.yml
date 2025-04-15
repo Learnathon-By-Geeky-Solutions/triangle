@@ -75,4 +75,4 @@ jobs:
             -Dsonar.tests=test
             -Dsonar.java.version=17
             -Dsonar.verbose=true
-            -Dsonar.dart.coverage.reportPath=coverage/lcov.info
+            -Dsonar.dart.lcov.reportPaths=coverage/lcov.info
