@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:triangle/utils/constants/app_colors.dart';
 
 import '../../utils/constants/sizes.dart';
-import '../../utils/validator/app_validator.dart';
+import '../../utils/validators/app_validator.dart';
 import '../../view_model/auth/login_controller.dart';
 
 class LoginView extends StatelessWidget {

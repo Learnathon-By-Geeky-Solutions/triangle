@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:triangle/utils/validator/app_validator.dart';
+import 'package:triangle/utils/validators/app_validator.dart';
 
 void main() {
   group('AppValidator', () {

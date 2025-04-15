@@ -5,7 +5,7 @@ import 'package:triangle/utils/theme/extentions/custom_color_extention.dart';
 
 import '../../utils/constants/app_colors.dart';
 import '../../utils/constants/sizes.dart';
-import '../../utils/validator/app_validator.dart';
+import '../../utils/validators/app_validator.dart';
 import '../../view_model/auth/register_controller.dart';
 
 class RegisterView extends StatelessWidget {
