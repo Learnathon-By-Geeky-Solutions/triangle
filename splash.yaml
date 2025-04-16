@@ -11,4 +11,3 @@ flutter_native_splash:
     image_dark: "assets/images/splash.png"
 
   web: false
-  

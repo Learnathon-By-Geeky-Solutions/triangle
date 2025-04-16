@@ -76,4 +76,16 @@ class RegisterController extends GetxController {
       AppLoaders.errorSnackBar(title: "Error", message: e.toString());
     }
   }
+
+  @override
+  void onClose() {
+    firstNameController.dispose();
+    lastNameController.dispose();
+    emailController.dispose();
+    phoneController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    super.onClose();
+  }
+
 }

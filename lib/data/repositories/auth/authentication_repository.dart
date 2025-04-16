@@ -69,4 +69,22 @@ class AuthenticationRepository extends GetxController {
       throw "An unexpected error occurred. Please try again.";
     }
   }
+
+
+  Future<void> logout() async {
+    try {
+      await _auth.signOut();
+      Get.offAll(() => const LoginView());
+    } on FirebaseAuthException catch (e) {
+      throw AppFirebaseAuthException(e.code);
+    } on FirebaseException catch (e) {
+      throw AppFirebaseException(e.code);
+    } on FormatException catch (_) {
+      throw const AppFormatException();
+    } on PlatformException catch (e) {
+      throw AppPlatformException(e.code);
+    } catch (e) {
+      throw "An unexpected error occurred. Please try again.";
+    }
+  }
 }

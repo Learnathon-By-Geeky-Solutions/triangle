@@ -21,9 +21,9 @@ class LoginController extends GetxController {
 
   @override
   void onInit() {
+    super.onInit();
     emailController.text = deviceStorage.read("REMEMBER_ME_EMAIL") ?? "";
     passwordController.text = deviceStorage.read("REMEMBER_ME_PASSWORD") ?? "";
-    super.onInit();
   }
 
   void login() async {
@@ -64,6 +64,15 @@ class LoginController extends GetxController {
 
   void forgotPassword() {
     // Implement forgot password logic here
+  }
+
+  @override
+  void onClose() {
+    emailController.dispose();
+    passwordController.dispose();
+    passwordVisible.close();
+    rememberMe.close();
+    super.onClose();
   }
 
 }

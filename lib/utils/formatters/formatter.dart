@@ -30,27 +30,41 @@ class Formatter {
   }
 
 
-  // Not fully tested.
   static String internationalFormatPhoneNumber(String phoneNumber) {
     // Remove any non-digit characters from the phone number
     var digitsOnly = phoneNumber.replaceAll(RegExp(r'\D'), '');
 
-    // Extract the country code from the digitsOnly
-    String countryCode = '+${digitsOnly.substring(0, 2)}';
-    digitsOnly = digitsOnly.substring(2);
+    // Ensure the phone number has at least a country code and some digits
+    if (digitsOnly.length < 3) {
+      throw ArgumentError('Phone number is too short to format.');
+    }
+
+    // Extract the country code (assuming it's up to 3 digits long)
+    String countryCode;
+    if (digitsOnly.startsWith('1')) {
+      countryCode = '+1'; // For US/Canada
+      digitsOnly = digitsOnly.substring(1);
+    } else if (digitsOnly.length > 3) {
+      countryCode = '+${digitsOnly.substring(0, 3)}';
+      digitsOnly = digitsOnly.substring(3);
+    } else {
+      countryCode = '+${digitsOnly.substring(0, 2)}';
+      digitsOnly = digitsOnly.substring(2);
+    }
 
     // Add the remaining digits with proper formatting
     final formattedNumber = StringBuffer();
-    formattedNumber.write('($countryCode) ');
+    formattedNumber.write('$countryCode ');
 
     int i = 0;
     while (i < digitsOnly.length) {
-      int groupLength = 2;
-      if (i == 0 && countryCode == '+1') {
-        groupLength = 3;
+      int groupLength = (i == 0 && countryCode == '+1') ? 3 : 2;
+      int end = i + groupLength;
+
+      if (end > digitsOnly.length) {
+        end = digitsOnly.length;
       }
 
-      int end = i + groupLength;
       formattedNumber.write(digitsOnly.substring(i, end));
 
       if (end < digitsOnly.length) {
@@ -61,14 +75,4 @@ class Formatter {
 
     return formattedNumber.toString();
   }
-
-
-
-
 }
-
-
-/*
-*
-*
-* */

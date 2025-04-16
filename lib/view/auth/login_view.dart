@@ -6,6 +6,7 @@ import 'package:triangle/utils/constants/app_colors.dart';
 import '../../utils/constants/sizes.dart';
 import '../../utils/validators/app_validator.dart';
 import '../../view_model/auth/login_controller.dart';
+import 'register_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -93,7 +94,10 @@ class LoginView extends StatelessWidget {
                   style: TextStyle(color: AppColor.textSecondary),
                 ),
                 const SizedBox(height: Sizes.spaceBtwItems),
-                OutlinedButton(onPressed: () {}, child: const Text("Register")),
+                OutlinedButton(
+                  onPressed: () => Get.to(() => const RegisterView()),
+                  child: const Text("Register"),
+                ),
                 const SizedBox(height: Sizes.spaceBtwSections),
               ]),
             ),

@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:triangle/utils/theme/extentions/custom_color_extention.dart';
+import 'package:triangle/utils/theme/extensions/custom_color_extension.dart';
 
 import '../../utils/constants/app_colors.dart';
 import '../../utils/constants/sizes.dart';
 import '../../utils/validators/app_validator.dart';
 import '../../view_model/auth/register_controller.dart';
+import 'login_view.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
@@ -127,10 +128,27 @@ class RegisterView extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: Sizes.spaceBtwInputFields),
-                    Row(children: [
-                      SizedBox(height: 24, width: 24, child: Obx(() => Checkbox(value: controller.termsAndConditions.value, onChanged: (value) {controller.termsAndConditions.value = value!;}))),
-                      Text("termsAndConditions".tr)
-                    ]),
+                    Row(
+                      children: [
+                        SizedBox(
+                          height: 24, 
+                          width: 24, 
+                          child: Obx(() => Checkbox(
+                            value: controller.termsAndConditions.value, 
+                            onChanged: (value) {
+                              controller.termsAndConditions.value = value!;
+                            }
+                          )),
+                        ),
+                        const SizedBox(width: Sizes.spaceBtwItems),
+                        GestureDetector(
+                          onTap: () {
+                            controller.termsAndConditions.value = !controller.termsAndConditions.value;
+                          },
+                          child: Text("termsAndConditions".tr),
+                        )
+                      ]
+                    ),
                     const SizedBox(height: Sizes.spaceBtwSections),
                   ],
                 ),
@@ -143,7 +161,7 @@ class RegisterView extends StatelessWidget {
                         style: ButtonStyle(
                           backgroundColor: WidgetStateProperty.all(
                               Theme.of(context)
-                                  .extension<CustomColorExtention>()
+                                  .extension<CustomColorExtension>()
                                   ?.customPrimaryColor),
                         ),
                         child: const Text("Register")),
@@ -153,7 +171,10 @@ class RegisterView extends StatelessWidget {
                       style: TextStyle(color: AppColor.textSecondary),
                     ),
                     const SizedBox(height: Sizes.spaceBtwItems),
-                    OutlinedButton(onPressed: () {}, child: const Text("Login"))
+                    OutlinedButton(
+                      onPressed: () => Get.to(() => const LoginView()),
+                      child: const Text("Login"),
+                    )
                   ],
                 )
               ],

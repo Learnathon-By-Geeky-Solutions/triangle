@@ -6,7 +6,7 @@ class AppValidator {
     }
 
     // Regular expression for email validation
-    final emailRegExp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+    final emailRegExp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$');
 
     if (!emailRegExp.hasMatch(value)) {
       return 'Invalid email address.';
@@ -76,7 +76,7 @@ class AppValidator {
     }
 
     // Regular expression for name validation
-    final nameRegExp = RegExp(r'^[A-Za-z\s]+$');
+    final nameRegExp = RegExp(r"^[A-Za-z\s'-]+$");
 
     if (!nameRegExp.hasMatch(value)) {
       return 'Invalid name format.';
