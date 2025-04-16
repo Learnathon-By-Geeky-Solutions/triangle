@@ -1,4 +1,3 @@
-// lib/utils/environment/env.dart
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class Env {
@@ -14,6 +13,4 @@ class Env {
   static String get iosProjectId => dotenv.env['IOS_PROJECT_ID'] ?? '';
   static String get iosStorageBucket => dotenv.env['IOS_STORAGE_BUCKET'] ?? '';
   static String get iosBundleId => dotenv.env['IOS_BUNDLE_ID'] ?? '';
-
-  // Add getters for other environment variables as needed
 }
