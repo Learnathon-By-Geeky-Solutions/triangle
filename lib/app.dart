@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'bindings/general_bindings.dart';
 import 'utils/theme/theme.dart';
 import 'utils/translations/localization_service.dart';
@@ -20,7 +19,6 @@ class LittleSteps extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      // home: const RegisterView(),
       home: const Scaffold(body: Center(child: CircularProgressIndicator(),),),
     );
   }
