@@ -4,11 +4,11 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:triangle/utils/exceptions/format_exceptions.dart';
+import 'package:triangle/view/child_onboarding/child_name_input_view.dart';
 
 import '../../../utils/exceptions/app_exceptions.dart';
 import '../../../view/auth/login_view.dart';
 import '../../../view/auth/register_view.dart';
-import '../../../view/home/home_view.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
@@ -26,7 +26,7 @@ class AuthenticationRepository extends GetxController {
 
     final user = _auth.currentUser;
     if (user != null) {
-      Get.offAll(() => const HomeView());
+      Get.offAll(() => const ChildNameInputView());
     }
     else {
       deviceStorage.writeIfNull('isFirstTime', true);
