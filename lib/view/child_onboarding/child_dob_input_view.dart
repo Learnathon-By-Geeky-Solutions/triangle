@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../utils/constants/sizes.dart';
+import '../../view_model/child_onboarding/child_onboarding_controller.dart';
 
-class ChildDobInputView extends StatelessWidget {
+class ChildDobInputView extends StatefulWidget {
   const ChildDobInputView({super.key});
 
   @override
+  State<ChildDobInputView> createState() => _ChildDobInputViewState();
+}
+
+class _ChildDobInputViewState extends State<ChildDobInputView> {
+  @override
   Widget build(BuildContext context) {
+
+    final controller = Get.find<ChildOnboardingController>();
 
     return Scaffold(
       body: SizedBox(
@@ -22,12 +31,15 @@ class ChildDobInputView extends StatelessWidget {
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               const SizedBox(height: Sizes.spaceBtwItems),
+              
               TextFormField(
+                controller: controller.dobController,
+                readOnly: true,
                 decoration: const InputDecoration(
-                  hintText: "Enter your child's date of birth",
+                  hintText: "Select your child's date of birth",
+                  suffixIcon: Icon(Icons.calendar_today),
                 ),
-                keyboardType: TextInputType.datetime,
-                
+                onTap: () => controller.pickDate(context),
               ),
               const SizedBox(height: Sizes.spaceBtwSections),
               OutlinedButton(
