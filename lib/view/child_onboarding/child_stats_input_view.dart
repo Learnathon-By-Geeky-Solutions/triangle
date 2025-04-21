@@ -1,23 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import '../../utils/constants/sizes.dart';
 import '../../view_model/child_onboarding/child_onboarding_controller.dart';
-import 'child_stats_input_view.dart';
 
-class ChildDobInputView extends StatefulWidget {
-  const ChildDobInputView({super.key});
+class ChildStatsInputView extends StatelessWidget {
+  ChildStatsInputView({super.key});
+  
+  final controller = ChildOnboardingController.instance;
 
-  @override
-  State<ChildDobInputView> createState() => _ChildDobInputViewState();
-}
-
-class _ChildDobInputViewState extends State<ChildDobInputView> {
   @override
   Widget build(BuildContext context) {
-
-    final controller = Get.find<ChildOnboardingController>();
-
     return Scaffold(
       body: SizedBox(
         width: MediaQuery.of(context).size.width,
@@ -28,25 +19,34 @@ class _ChildDobInputViewState extends State<ChildDobInputView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Enter Your Child\'s Birthday',
+                'Enter Child\'s Height & Weight',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
-              const SizedBox(height: Sizes.spaceBtwItems),
-              
+              const SizedBox(height: Sizes.spaceBtwSections),
+              // Height Input
               TextFormField(
-                controller: controller.dobController,
-                readOnly: true,
+                controller: controller.heightController,
+                keyboardType: TextInputType.number,
                 decoration: const InputDecoration(
-                  hintText: "Select your child's date of birth",
-                  suffixIcon: Icon(Icons.calendar_today),
+                  hintText: 'Enter height in centimeters',
+                  suffixText: 'cm',
                 ),
-                onTap: () => controller.pickDate(context),
+              ),
+              const SizedBox(height: Sizes.spaceBtwItems),
+              // Weight Input
+              TextFormField(
+                controller: controller.weightController,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  hintText: 'Enter weight in kilograms',
+                  suffixText: 'kg',
+                ),
               ),
               const SizedBox(height: Sizes.spaceBtwSections),
+
+              // Continue Button
               OutlinedButton(
-                onPressed: () {
-                  Get.to(() => ChildStatsInputView());
-                },
+                onPressed: () {},
                 child: const Text("Continue"),
               ),
             ],

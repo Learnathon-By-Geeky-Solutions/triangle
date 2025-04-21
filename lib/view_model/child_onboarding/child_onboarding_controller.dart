@@ -7,6 +7,8 @@ class ChildOnboardingController extends GetxController {
 
   final TextEditingController nameController = TextEditingController();
   final dobController = TextEditingController();
+  final TextEditingController heightController = TextEditingController();
+  final TextEditingController weightController = TextEditingController();
   final selectedDate = Rx<DateTime?>(null);
 
   Future<void> pickDate(BuildContext context) async {
