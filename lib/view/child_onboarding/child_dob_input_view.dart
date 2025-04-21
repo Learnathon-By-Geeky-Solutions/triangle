@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../utils/constants/sizes.dart';
 
-class ChildNameInputView extends StatelessWidget {
-  const ChildNameInputView({super.key});
+class ChildDobInputView extends StatelessWidget {
+  const ChildDobInputView({super.key});
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: SizedBox(
         width: MediaQuery.of(context).size.width,
@@ -17,17 +18,23 @@ class ChildNameInputView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Welcome to LittleSteps',
+                'Enter Your Child\'s Birthday',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               const SizedBox(height: Sizes.spaceBtwItems),
-              Image.asset("assets/images/lying_baby.png"),
-              const SizedBox(height: Sizes.spaceBtwItems),
               TextFormField(
-                decoration: const InputDecoration(hintText: "Enter your child's name"),
+                decoration: const InputDecoration(
+                  hintText: "Enter your child's date of birth",
+                ),
+                keyboardType: TextInputType.datetime,
+                
               ),
               const SizedBox(height: Sizes.spaceBtwSections),
-              OutlinedButton(onPressed: () {}, child: const Text("Continue")),
+              OutlinedButton(
+                onPressed: () {
+                },
+                child: const Text("Continue"),
+              ),
             ],
           ),
         ),
