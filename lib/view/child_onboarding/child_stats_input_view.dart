@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:triangle/view/home/home_view.dart';
 import '../../utils/constants/sizes.dart';
 import '../../view_model/child_onboarding/child_onboarding_controller.dart';
 
@@ -46,7 +48,9 @@ class ChildStatsInputView extends StatelessWidget {
 
               // Continue Button
               OutlinedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(() => const HomeView());
+                },
                 child: const Text("Continue"),
               ),
             ],
