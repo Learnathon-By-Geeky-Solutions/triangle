@@ -19,7 +19,7 @@ class AppTextTheme {
     bodySmall: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.w400, color: AppColor.dark),
 
     labelLarge: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.normal, color: AppColor.dark),
-    labelMedium: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.normal, color: AppColor.dark.withValues(alpha: 0.5)),
+    labelMedium: const TextStyle().copyWith(fontSize: 12.0, fontWeight: FontWeight.normal, color: AppColor.dark),
     labelSmall: const TextStyle().copyWith(fontSize: 10.0, fontWeight: FontWeight.normal, color: AppColor.dark.withValues(alpha: 0.5)),
   );
 
