@@ -35,4 +35,9 @@ class AppColor {
   static const Color lightGrey = Color(0xFFF9F9F9);
   static const Color white = Color(0xFFFFFFFF);
 
+  // Container colors
+  static const Color mayaBlue = Color(0xFF6095FF);
+  static const Color hotPink = Color(0xFFFF60AE);
+  static const Color brownYellow = Color(0xFFFFBA60);
+  static const Color pinkFlamingo = Color(0xFFFF60FA);
 }
