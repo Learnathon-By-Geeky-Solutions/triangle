@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../utils/constants/sizes.dart';
-import '../../view_model/child_onboarding/child_onboarding_controller.dart';
-import 'child_dob_input_view.dart';
 
 class ChildNameInputView extends StatelessWidget {
   const ChildNameInputView({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    final controller = Get.put(ChildOnboardingController());
-
     return Scaffold(
       body: SizedBox(
         width: MediaQuery.of(context).size.width,
@@ -23,7 +17,7 @@ class ChildNameInputView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Welcome to LittleSteps',
+                'Welcome to LitteSteps',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               const SizedBox(height: Sizes.spaceBtwItems),
@@ -31,10 +25,9 @@ class ChildNameInputView extends StatelessWidget {
               const SizedBox(height: Sizes.spaceBtwItems),
               TextFormField(
                 decoration: const InputDecoration(hintText: "Enter your child's name"),
-                controller: controller.nameController,
               ),
               const SizedBox(height: Sizes.spaceBtwSections),
-              OutlinedButton(onPressed: () => Get.to(() => const ChildDobInputView()), child: const Text("Continue")),
+              OutlinedButton(onPressed: () {}, child: const Text("Continue")),
             ],
           ),
         ),
