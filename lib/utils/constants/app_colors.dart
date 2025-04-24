@@ -42,4 +42,6 @@ class AppColor {
   static const Color brownYellow = Color(0xFFFFBA60);
   static const Color pinkFlamingo = Color(0xFFFF60FA);
   static const Color royalBlue = Color(0xFF575CE5);
+  static const Color mediumSlateBlue = Color(0xFF7A7CEA);
+  static const Color lightSlateBlue = Color(0xFF9396FB);
 }
