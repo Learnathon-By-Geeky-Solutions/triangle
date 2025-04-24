@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:triangle/utils/helpers/helper_functions.dart';
 import 'package:triangle/view/home/widgets/activity_grid_layout.dart';
 import 'package:triangle/view/home/widgets/age_grid_layout.dart';
+import 'package:triangle/view/home/widgets/vaccine_stack_layout.dart';
 
 import '../../utils/constants/app_colors.dart';
 import '../../utils/constants/sizes.dart';
@@ -83,19 +84,12 @@ class HomeView extends StatelessWidget {
               Text("Upcoming Vaccines",
                 style: Theme.of(context).textTheme.headlineMedium),
           
-              const SizedBox(height: Sizes.sm),
+              const SizedBox(height: Sizes.md),
           
-              SizedBox(height: 140, 
-                child: Stack(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: AppColor.softGrey,
-                        borderRadius: BorderRadius.circular(Sizes.sm),
-                      ),
-                    )
-                  ],
-                ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width - Sizes.xl,
+                height: 185, 
+                child: const VaccineStackLayout(),
               ),
             ],
           ),
