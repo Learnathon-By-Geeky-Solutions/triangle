@@ -91,6 +91,8 @@ class HomeView extends StatelessWidget {
                 height: 185, 
                 child: const VaccineStackLayout(),
               ),
+              
+              // just for testing purposes
             ],
           ),
         ),
