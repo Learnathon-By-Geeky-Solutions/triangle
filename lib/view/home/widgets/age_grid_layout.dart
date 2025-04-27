@@ -46,7 +46,7 @@ class AgeGridLayout extends StatelessWidget {
                     maxHeight: Sizes.xxl,
                     maxWidth: Sizes.xxl,
                   ),
-                  child: Center(child: Text(ageGrid[index][2], style: Theme.of(context).textTheme.headlineMedium,))
+                  child: Center(child: Text(ageGrid[index][2], style: Theme.of(context).textTheme.headlineMedium!.apply(color: AppColor.black),))
                 )
               ],
             ),
