@@ -1,5 +1,11 @@
 
+import 'package:get/get.dart';
+
 class Sizes {
+  static double screenWidth = Get.context!.width;
+  static double screenHeight = Get.context!.height;
+
+
   // Padding and margin sizes
   static const double xs = 4.0;
   static const double sm = 8.0;
@@ -8,6 +14,14 @@ class Sizes {
   static const double xl = 32.0;
   static const double xxl = 48.0;
 
+  // Responsive sizes for different screen sizes
+  static double rxs = screenWidth * (4 / 360);
+  static double rsm = screenWidth * (8 / 360);
+  static double rmd = screenWidth * (16 / 360);
+  static double rlg = screenWidth * (24 / 360);
+  static double rxl = screenWidth * (32 / 360); 
+  static double rxxl = screenWidth * (48 / 360);
+
   // Icon sizes
   static const double iconXs = 12.0;
   static const double iconSm = 16.0;
@@ -15,9 +29,15 @@ class Sizes {
   static const double iconLg = 32.0;
 
   // Font sizes
+  static const double fontSizeXs = 12.0;
   static const double fontSizeSm = 14.0;
   static const double fontSizeMd = 16.0;
   static const double fontSizeLg = 18.0;
+
+  static double rFontSizeXs = screenWidth * (12 / 360);
+  static double rFontSizeSm = screenWidth * (14 / 360);
+  static double rFontSizeMd = screenWidth * (16 / 360);
+  static double rFontSizeLg = screenWidth * (18 / 360);
 
   // Button sizes
   static const double buttonHeight = 48.0;
