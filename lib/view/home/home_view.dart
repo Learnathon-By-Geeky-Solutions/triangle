@@ -22,10 +22,7 @@ class HomeView extends StatelessWidget {
               style: Theme.of(context).textTheme.labelMedium,),
           ],
         ),
-        backgroundColor: AppColor.softGrey,
-        centerTitle: true,
         leading: const Icon(Icons.menu),
-        actionsPadding: const EdgeInsets.only(right: Sizes.md),
         actions: const [
           CircleAvatar(
             radius: Sizes.md,
@@ -33,6 +30,41 @@ class HomeView extends StatelessWidget {
           ),
         ],
       ),
+
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          border: Border(
+            top: BorderSide(
+              color: AppColor.darkGrey,
+            ),
+          ),
+        ),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_rounded),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.grid_view_rounded),
+              label: "Activities",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.support_rounded),
+              label: "Support",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_rounded),
+              label: "Profile",
+            ),
+          ],
+          currentIndex: 0,
+          selectedFontSize: Sizes.fontSizeXs,
+          unselectedFontSize: Sizes.fontSizeXs,
+        ),
+      ),
+
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -77,7 +109,7 @@ class HomeView extends StatelessWidget {
           
               const SizedBox(height: Sizes.sm),
           
-              const SizedBox(height: 400, child: ActivityGridLayout()),
+              SizedBox(height: 400, child: ActivityGridLayout()),
           
               const SizedBox(height: Sizes.spaceBtwItems),
           
@@ -91,6 +123,8 @@ class HomeView extends StatelessWidget {
                 height: 185, 
                 child: const VaccineStackLayout(),
               ),
+          
+              const SizedBox(height: Sizes.sm),
             ],
           ),
         ),
