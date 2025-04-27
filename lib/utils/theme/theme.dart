@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:triangle/utils/theme/widget_themes/app_bar_theme.dart';
+import 'package:triangle/utils/theme/widget_themes/bottom_navigation_bar_theme.dart';
 import 'package:triangle/utils/theme/widget_themes/checkbox_theme.dart';
 import 'package:triangle/utils/theme/widget_themes/filled_button_theme.dart';
 import 'package:triangle/utils/theme/widget_themes/text_field_theme.dart';
@@ -16,11 +18,14 @@ class AppTheme {
     brightness: Brightness.light,
     primaryColor: AppColor.primary,
     disabledColor: AppColor.grey,
+    scaffoldBackgroundColor: AppColor.light,
     textTheme: AppTextTheme.lightTextTheme,
     inputDecorationTheme: AppTextFormFieldTheme.lightInputDecorationTheme,
     filledButtonTheme: AppFilledButtonTheme.lightfilledButtonTheme,
     outlinedButtonTheme: AppOutlineButtonTheme.lightOutlinedButtonTheme,
     checkboxTheme: AppCheckboxTheme.lightCheckboxTheme,
+    appBarTheme: AppbarTheme.lightAppBarTheme,
+    bottomNavigationBarTheme: AppBottomNavigationBarTheme.lightBottomNavigationBarTheme,
     extensions: [
       CustomColorExtension(customPrimaryColor: AppColor.primary),
     ]
@@ -32,11 +37,14 @@ class AppTheme {
     brightness: Brightness.dark,
     primaryColor: AppColor.primary,
     disabledColor: AppColor.grey,
+    scaffoldBackgroundColor: AppColor.dark,
     textTheme: AppTextTheme.darkTextTheme,
     inputDecorationTheme: AppTextFormFieldTheme.darkInputDecorationTheme,
     filledButtonTheme: AppFilledButtonTheme.darkfilledButtonTheme,
     outlinedButtonTheme: AppOutlineButtonTheme.darkOutlinedButtonTheme,
     checkboxTheme: AppCheckboxTheme.darkCheckboxTheme,
+    appBarTheme: AppbarTheme.darkAppBarTheme,
+    bottomNavigationBarTheme: AppBottomNavigationBarTheme.darkBottomNavigationBarTheme,
     extensions: [
       CustomColorExtension(customPrimaryColor: AppColor.primaryBright),
     ]
