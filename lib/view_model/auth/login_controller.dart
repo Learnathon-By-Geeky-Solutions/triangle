@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:triangle/data/repositories/auth/authentication_repository.dart';
 
-import '../../data/repositories/auth/authentication_repository.dart';
+import '../../data/repositories/auth/authentication_repository_impl.dart';
 import '../../utils/helpers/network_manager.dart';
 import '../../utils/popups/full_screen_loader.dart';
 import '../../utils/popups/loaders.dart';
 import '../../view/home/home_view.dart';
 
 class LoginController extends GetxController {
+  LoginController({required this.repository});
+  
+  final AuthenticationRepository repository;
+
   static LoginController get instance => Get.find();
 
   final deviceStorage = GetStorage();
@@ -17,6 +22,7 @@ class LoginController extends GetxController {
   final passwordController = TextEditingController();
   var passwordVisible = false.obs;
   var rememberMe = false.obs;
+  
 
 
   @override
@@ -47,7 +53,7 @@ class LoginController extends GetxController {
         deviceStorage.write("REMEMBER_ME_PASSWORD", passwordController.text.trim());
       }
       
-      await AuthenticationRepository.instance.loginWithEmailAndPassword(
+      await repository.loginWithEmailAndPassword(
         emailController.text.trim(),
         passwordController.text.trim(),
       );
