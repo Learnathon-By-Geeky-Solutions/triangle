@@ -19,14 +19,14 @@ class AgeGridLayout extends StatelessWidget {
       body: GridView.builder(
         itemCount: 4,
         physics: const NeverScrollableScrollPhysics(),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
-          crossAxisSpacing: Sizes.md, 
+          crossAxisSpacing: Sizes.rmd, 
           childAspectRatio: .72,
         ), 
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            padding: const EdgeInsets.symmetric(vertical: Sizes.md),
+            padding: EdgeInsets.symmetric(vertical: Sizes.rmd),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Sizes.md),
               color: ageGrid[index][1],
@@ -36,15 +36,15 @@ class AgeGridLayout extends StatelessWidget {
               children: [
                 Text(ageGrid[index][0],
                   style: Theme.of(context).textTheme.headlineSmall!.apply(color: AppColor.light),),
-                const SizedBox(height: Sizes.xs),
+                SizedBox(height: Sizes.rxs),
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(Sizes.sm),
                     color: AppColor.light,
                   ),
-                  constraints: const BoxConstraints(
-                    maxHeight: Sizes.xxl,
-                    maxWidth: Sizes.xxl,
+                  constraints: BoxConstraints(
+                    maxHeight: Sizes.rxxl,
+                    maxWidth: Sizes.rxxl,
                   ),
                   child: Center(child: Text(ageGrid[index][2], style: Theme.of(context).textTheme.headlineMedium!.apply(color: AppColor.black),))
                 )
