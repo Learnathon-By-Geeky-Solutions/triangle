@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:triangle/data/repositories/auth/authentication_repository.dart';
 
-import '../../data/repositories/auth/authentication_repository_impl.dart';
 import '../../utils/helpers/network_manager.dart';
 import '../../utils/popups/full_screen_loader.dart';
 import '../../utils/popups/loaders.dart';

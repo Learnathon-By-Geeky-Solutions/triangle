@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:triangle/utils/constants/app_colors.dart';
-import 'package:triangle/utils/constants/sizes%20copy.dart';
+import 'package:triangle/utils/constants/sizes.dart';
 
 class AppbarTheme {
   static AppBarTheme lightAppBarTheme = const AppBarTheme(
