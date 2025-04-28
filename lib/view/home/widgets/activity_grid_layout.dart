@@ -18,15 +18,15 @@ class ActivityGridLayout extends StatelessWidget {
     return GridView.builder(
       itemCount: 4,
       physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        crossAxisSpacing: Sizes.md,
-        mainAxisSpacing: Sizes.md,
-        childAspectRatio: .9,
+        crossAxisSpacing: Sizes.rmd,
+        mainAxisSpacing: Sizes.rmd,
+        childAspectRatio: .88,
       ),
       itemBuilder: (BuildContext context, int index) {
         return Container(
-          padding: const EdgeInsets.symmetric(vertical: Sizes.md),
+          padding: EdgeInsets.symmetric(vertical: Sizes.rmd),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(Sizes.xl),
             color: Get.isDarkMode ? AppColor.surfaceDark : AppColor.floralWhite,
@@ -34,7 +34,7 @@ class ActivityGridLayout extends StatelessWidget {
           child: Column(
             children: [
               Image.asset(activities[index][1]),
-              const SizedBox(height: Sizes.sm),
+              SizedBox(height: Sizes.rsm),
               Text(activities[index][0],
                 style: Theme.of(context).textTheme.headlineSmall),
             ],
