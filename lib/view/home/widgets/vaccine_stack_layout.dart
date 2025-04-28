@@ -40,12 +40,13 @@ class VaccineStackLayout extends StatelessWidget {
           child: Container(
             width: MediaQuery.of(context).size.width - Sizes.xl,
             height: 156,
-            padding: const EdgeInsets.all(Sizes.lg),
+            padding: EdgeInsets.all(Sizes.rlg),
             decoration: BoxDecoration(
               color: AppColor.royalBlue,
               borderRadius: BorderRadius.circular(Sizes.sm),
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Row(
                   children: [
