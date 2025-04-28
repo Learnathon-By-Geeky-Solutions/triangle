@@ -8,7 +8,7 @@ class AppTextFormFieldTheme {
   static InputDecorationTheme lightInputDecorationTheme =  InputDecorationTheme(
     errorMaxLines: 3,
     suffixIconColor: AppColor.darkGrey,
-    hintStyle: const TextStyle().copyWith(fontSize: Sizes.fontSizeMd, color: AppColor.textSecondary),
+    hintStyle: const TextStyle().copyWith(fontSize: Sizes.fs16, color: AppColor.textSecondary),
     filled: true,
     fillColor: AppColor.surface,
     enabledBorder: const OutlineInputBorder().copyWith(
@@ -42,7 +42,7 @@ class AppTextFormFieldTheme {
   static InputDecorationTheme darkInputDecorationTheme = InputDecorationTheme(
     errorMaxLines: 3,
     suffixIconColor: AppColor.darkGrey,
-    hintStyle: const TextStyle().copyWith(fontSize: Sizes.fontSizeMd, color: AppColor.textSecondary),
+    hintStyle: const TextStyle().copyWith(fontSize: Sizes.fs16, color: AppColor.textSecondary),
     filled: true,
     focusedBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(Sizes.inputFieldRadius),
