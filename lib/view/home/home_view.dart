@@ -60,8 +60,8 @@ class HomeView extends StatelessWidget {
             ),
           ],
           currentIndex: 0,
-          selectedFontSize: Sizes.fontSizeXs,
-          unselectedFontSize: Sizes.fontSizeXs,
+          selectedFontSize: Sizes.fs12,
+          unselectedFontSize: Sizes.fs12,
         ),
       ),
 
