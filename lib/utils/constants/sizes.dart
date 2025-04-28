@@ -1,9 +1,22 @@
 
-import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 
 class Sizes {
-  static double screenWidth = Get.context!.width;
-  static double screenHeight = Get.context!.height;
+  static late double width;
+  static late double height;
+
+  static void init(BuildContext context) {
+    width = MediaQuery.of(context).size.width;
+    height = MediaQuery.of(context).size.height;
+  }
+
+  static double w(double percent) {
+    return width * (percent / 100);
+  }
+
+  static double h(double percent) {
+    return height * (percent / 100);
+  }
 
 
   // Padding and margin sizes
@@ -15,12 +28,12 @@ class Sizes {
   static const double xxl = 48.0;
 
   // Responsive sizes for different screen sizes
-  static double rxs = screenWidth * (4 / 360);
-  static double rsm = screenWidth * (8 / 360);
-  static double rmd = screenWidth * (16 / 360);
-  static double rlg = screenWidth * (24 / 360);
-  static double rxl = screenWidth * (32 / 360); 
-  static double rxxl = screenWidth * (48 / 360);
+  static double get rxs => w(1); // 4.0
+  static double get rsm => w(2); // 8.0
+  static double get rmd => w(4); // 16.0
+  static double get rlg => w(6); // 24.0
+  static double get rxl => w(8); // 32.0
+  static double get rxxl => w(12); // 48.0
 
   // Icon sizes
   static const double iconXs = 12.0;
@@ -28,16 +41,31 @@ class Sizes {
   static const double iconMd = 24.0;
   static const double iconLg = 32.0;
 
-  // Font sizes
-  static const double fontSizeXs = 12.0;
-  static const double fontSizeSm = 14.0;
-  static const double fontSizeMd = 16.0;
-  static const double fontSizeLg = 18.0;
+  //Responsive icon sizes
+  static double get rIconSizeXs => w(3); // 12.0
+  static double get rIconSizeSm => w(4); // 16.0
+  static double get rIconSizeMd => w(6); // 24.0
+  static double get rIconSizeLg => w(8); // 32.0
 
-  static double rFontSizeXs = screenWidth * (12 / 360);
-  static double rFontSizeSm = screenWidth * (14 / 360);
-  static double rFontSizeMd = screenWidth * (16 / 360);
-  static double rFontSizeLg = screenWidth * (18 / 360);
+  // Font sizes
+  static const double fs10 = 10.0;
+  static const double fs12 = 12.0;
+  static const double fs14 = 14.0;
+  static const double fs16 = 16.0;
+  static const double fs18 = 18.0;
+  static const double fs20 = 20.0;
+  static const double fs24 = 24.0;
+  static const double fs32 = 32.0;
+
+  // Responsive font sizes
+  static double get rfs10 => w(2.5); // 10.0
+  static double get rfs12 => w(3); // 12.0
+  static double get rfs14 => w(3.5); // 14.0
+  static double get rfs16 => w(4); // 16.0
+  static double get rfs18 => w(4.5); // 18.0
+  static double get rfs20 => w(5); // 20.0
+  static double get rfs24 => w(6); // 24.0
+  static double get rfs32 => w(8); // 32.0
 
   // Button sizes
   static const double buttonHeight = 48.0;
