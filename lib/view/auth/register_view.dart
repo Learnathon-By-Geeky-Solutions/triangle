@@ -14,8 +14,7 @@ class RegisterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-    final controller = Get.put(RegisterController());
+    final controller = Get.find<RegisterController>();
 
     return Scaffold(
       body: Padding(
@@ -36,7 +35,7 @@ class RegisterView extends StatelessWidget {
                       "Create account as a parent",
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
-                          fontSize: Sizes.fontSizeLg),
+                          fontSize: Sizes.fs18),
                     ),
                     const SizedBox(
                       height: Sizes.spaceBtwInputFields,
