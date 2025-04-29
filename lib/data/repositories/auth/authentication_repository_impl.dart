@@ -16,6 +16,7 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
 
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
+  static const commonErrorMessage = "An unexpected error occurred. Please try again.";
   
   @override
   Future<void> onReady() async {
@@ -51,7 +52,7 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
     } on PlatformException catch (e) {
       throw AppPlatformException(e.code);
     } catch (e) {
-      throw "An unexpected error occurred. Please try again.";
+      throw commonErrorMessage;
     }
   }
 
@@ -69,7 +70,7 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
     } on PlatformException catch (e) {
       throw AppPlatformException(e.code);
     } catch (e) {
-      throw "An unexpected error occurred. Please try again.";
+      throw commonErrorMessage;
     }
   }
 
@@ -88,7 +89,7 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
     } on PlatformException catch (e) {
       throw AppPlatformException(e.code);
     } catch (e) {
-      throw "An unexpected error occurred. Please try again.";
+      throw commonErrorMessage;
     }
   }
 }
