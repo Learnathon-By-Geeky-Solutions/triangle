@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:triangle/utils/validators/app_validator.dart';
 
 import '../../utils/constants/sizes.dart';
 import '../../view_model/child_onboarding/child_onboarding_controller.dart';
@@ -11,7 +12,7 @@ class ChildNameInputView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final controller = Get.put(ChildOnboardingController());
+    final controller = Get.find<ChildOnboardingController>();
 
     return Scaffold(
       body: SizedBox(
@@ -29,12 +30,24 @@ class ChildNameInputView extends StatelessWidget {
               const SizedBox(height: Sizes.spaceBtwItems),
               Image.asset("assets/images/lying_baby.png"),
               const SizedBox(height: Sizes.spaceBtwItems),
-              TextFormField(
-                decoration: const InputDecoration(hintText: "Enter your child's name"),
-                controller: controller.nameController,
+              Form(
+                key: controller.nameFormKey,
+                child: TextFormField(
+                  decoration: const InputDecoration(hintText: "Enter your child's name"),
+                  controller: controller.nameController,
+                  validator: (value) => AppValidator.validateName(value),
+                ),
               ),
               const SizedBox(height: Sizes.spaceBtwSections),
-              OutlinedButton(onPressed: () => Get.to(() => const ChildDobInputView()), child: const Text("Continue")),
+              OutlinedButton(
+                onPressed: () {
+                  if (controller.nameFormKey.currentState!.validate()) {
+                    controller.nameFormKey.currentState!.save();
+                    Get.to(() => const ChildDobInputView()); 
+                  }
+                },
+                child: const Text("Continue"),
+              ),
             ],
           ),
         ),
