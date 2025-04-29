@@ -10,9 +10,12 @@ class UserRepositoryImpl extends UserRepository {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   @override
-  Future<void> saveUserData(UserModel user) async {
+  Future<String> saveUserData(UserModel user) async {
     try {
-      await _firestore.collection("users").doc(user.id).set(user.toJson());
+      final docRef = _firestore.collection("users").doc(user.id);
+      await docRef.set(user.toJson());
+
+      return docRef.id;
     } on FirebaseException catch (e) {
       throw AppFirebaseException(e.code);
     } on FormatException catch (_) {
