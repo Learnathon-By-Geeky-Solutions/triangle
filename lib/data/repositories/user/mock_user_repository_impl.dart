@@ -9,4 +9,12 @@ class MockUserRepositoryImpl extends UserRepository {
     await Future.delayed(const Duration(seconds: 1));
     return "";
   }
+  
+  @override
+  Future<UserModel?> getUserData() {
+    throw UnimplementedError();
+  }
+  
+  @override
+  String? get userId => throw UnimplementedError();
 }
