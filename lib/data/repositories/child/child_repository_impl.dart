@@ -10,6 +10,7 @@ import 'package:triangle/utils/exceptions/format_exceptions.dart';
 class ChildRepositoryImpl implements ChildRepository {
   final UserRepository _userRepository;
   final FirebaseFirestore _firestore;
+  static const String commonErrorMessage = "An error occurred. Please try again later.";
 
   ChildRepositoryImpl({
     required UserRepository userRepository,
@@ -34,7 +35,7 @@ class ChildRepositoryImpl implements ChildRepository {
     } on PlatformException catch (e) {
       throw AppPlatformException(e.code);
     } catch (e) {
-      throw "An unexpected error occurred. Please try again.";
+      throw commonErrorMessage;
     }
   }
 
@@ -63,7 +64,7 @@ class ChildRepositoryImpl implements ChildRepository {
     } on PlatformException catch (e) {
       throw AppPlatformException(e.code);
     } catch (e) {
-      throw "An unexpected error occurred. Please try again.";
+      throw commonErrorMessage;
     }
   }
 
@@ -92,7 +93,7 @@ class ChildRepositoryImpl implements ChildRepository {
     } on PlatformException catch (e) {
       throw AppPlatformException(e.code);
     } catch (e) {
-      throw "An unexpected error occurred. Please try again.";
+      throw commonErrorMessage;
     }
   }
 
@@ -113,7 +114,7 @@ class ChildRepositoryImpl implements ChildRepository {
     } on PlatformException catch (e) {
       throw AppPlatformException(e.code);
     } catch (e) {
-      throw "An unexpected error occurred. Please try again.";
+      throw commonErrorMessage;
     }
   }
 }
