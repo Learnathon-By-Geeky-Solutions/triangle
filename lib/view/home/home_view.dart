@@ -100,7 +100,7 @@ class HomeView extends StatelessWidget {
           
               const SizedBox(height: Sizes.xs),
           
-              SizedBox(height: 110, child: AgeGridLayout()),
+              const SizedBox(height: 110, child: AgeGridLayout()),
               
               const SizedBox(height: Sizes.spaceBtwItems),
           
