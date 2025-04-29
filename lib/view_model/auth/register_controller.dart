@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:triangle/data/models/user/user_model.dart';
-import 'package:triangle/data/repositories/user/user_repository_impl.dart';
+import 'package:triangle/data/repositories/auth/authentication_repository.dart';
 import 'package:triangle/utils/helpers/network_manager.dart';
 import 'package:triangle/utils/popups/loaders.dart';
-import 'package:triangle/view/home/home_view.dart';
+import 'package:triangle/view/child_onboarding/child_name_input_view.dart';
 
-import '../../data/repositories/auth/authentication_repository_impl.dart';
 import '../../data/repositories/user/user_repository.dart';
 import '../../utils/popups/full_screen_loader.dart';
 
 class RegisterController extends GetxController {
-  RegisterController({required this.repository});
+  RegisterController({required this.authRepository, required this.userRepository});
 
-  final UserRepository repository;
+  final AuthenticationRepository authRepository;
+  final UserRepository userRepository;
 
   static RegisterController get instance => Get.find();
 
@@ -49,7 +49,7 @@ class RegisterController extends GetxController {
         return;
       }
 
-      final userCredential = await AuthenticationRepositoryImpl.instance.registerWithEmailAndPassword(
+      final userCredential = await authRepository.registerWithEmailAndPassword(
         emailController.text.trim(),
         passwordController.text.trim(),
       );
@@ -65,14 +65,13 @@ class RegisterController extends GetxController {
       );
 
 
-      final userRepository = Get.put(UserRepositoryImpl());
       await userRepository.saveUserData(newUser);
 
       FullScreenLoader.stopLoading();
 
       AppLoaders.successSnackBar(title: "Congratulations", message: "Account created successfully");
 
-      Get.offAll(() => const HomeView());
+      Get.offAll(() => const ChildNameInputView());
 
     }
     catch (e) {
