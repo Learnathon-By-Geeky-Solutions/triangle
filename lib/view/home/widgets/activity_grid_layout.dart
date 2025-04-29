@@ -8,9 +8,9 @@ class ActivityGridLayout extends StatelessWidget {
 
   final List activities = [
     ["Feeding", "assets/images/vaccine.png"],
-    ["Sleeping", "assets/images/vaccine.png"],
+    ["Sleeping", "assets/images/baby_sleep.png"],
     ["Vaccination", "assets/images/vaccine.png"],
-    ["Milestone", "assets/images/vaccine.png"],
+    ["Milestone", "assets/images/milestone.png"],
   ];
 
   @override
