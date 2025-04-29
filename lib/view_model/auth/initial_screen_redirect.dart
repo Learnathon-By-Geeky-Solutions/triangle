@@ -5,6 +5,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:triangle/view/auth/login_view.dart';
 import 'package:triangle/view/auth/register_view.dart';
 import 'package:triangle/view/child_onboarding/child_name_input_view.dart';
+import 'package:triangle/view/home/home_view.dart';
 
 class InitialScreenRedirect extends GetxController {
   final deviceStorage = GetStorage();
@@ -19,7 +20,9 @@ class InitialScreenRedirect extends GetxController {
   Future<void> screenRedirect() async {
     final user = FirebaseAuth.instance.currentUser;
     if (user != null) {
-      Get.offAll(() => const ChildNameInputView());
+      deviceStorage.read("childId") != null 
+        ? Get.offAll(() => const HomeView())
+        : Get.offAll(() => const ChildNameInputView());
     }
     else {
       deviceStorage.writeIfNull('isFirstTime', true);
