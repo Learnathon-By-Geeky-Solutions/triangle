@@ -85,4 +85,31 @@ class AppValidator {
     return null;
   }
 
+  static String? validateDate(String? date) {
+    final parsedDate = DateTime.tryParse(date!);
+    if (parsedDate == null) {
+      return 'Date of birth is required.';
+    }
+
+    // Check if the date is in the future
+    if (parsedDate.isAfter(DateTime.now())) {
+      return 'Date of birth cannot be in the future.';
+    }
+
+    return null;
+  }
+
+static String? validatePositiveNumber(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'This field is required.';
+  }
+
+  final number = num.tryParse(value);
+  if (number == null || number <= 0) {
+    return 'Please enter a positive number.';
+  }
+
+  return null;
+}
+
 }
