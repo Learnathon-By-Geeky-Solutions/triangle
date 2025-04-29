@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:triangle/utils/validators/app_validator.dart';
 
 import '../../utils/constants/sizes.dart';
 import '../../view_model/child_onboarding/child_onboarding_controller.dart';
@@ -33,19 +34,29 @@ class _ChildDobInputViewState extends State<ChildDobInputView> {
               ),
               const SizedBox(height: Sizes.spaceBtwItems),
               
-              TextFormField(
-                controller: controller.dobController,
-                readOnly: true,
-                decoration: const InputDecoration(
-                  hintText: "Select your child's date of birth",
-                  suffixIcon: Icon(Icons.calendar_today),
+              Form(
+                key: controller.dobFormKey,
+                child: TextFormField(
+                  controller: controller.dobController,
+                  // readOnly: true,
+                  decoration: const InputDecoration(
+                    hintText: "Select your child's date of birth",
+                    suffixIcon: Icon(Icons.calendar_today),
+                  ),
+                  onTap: () async => controller.pickDate(context),
+                  validator: (date) { 
+                    AppValidator.validateDate(date);
+                    return null;
+                  },
                 ),
-                onTap: () => controller.pickDate(context),
               ),
               const SizedBox(height: Sizes.spaceBtwSections),
               OutlinedButton(
                 onPressed: () {
-                  Get.to(() => ChildStatsInputView());
+                  if (controller.dobFormKey.currentState!.validate()) {
+                    controller.dobFormKey.currentState!.save();
+                    Get.to(() => ChildStatsInputView());
+                  }
                 },
                 child: const Text("Continue"),
               ),
