@@ -19,6 +19,16 @@ class ChildModel {
     this.profilePicture,
   });
 
+  static ChildModel empty() => ChildModel(
+    id: "",
+    parentId: "",
+    name: "",
+    dateOfBirth: DateTime.now(),
+    height: 0,
+    weight: 0,
+    profilePicture: ""
+  );
+      
   Map<String, dynamic> toJson() {
     return {
       'userId': parentId,
