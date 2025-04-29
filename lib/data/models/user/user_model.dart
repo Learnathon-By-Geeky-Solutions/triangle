@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 import '../../../utils/formatters/formatter.dart';
 
 class UserModel {
@@ -24,16 +23,6 @@ class UserModel {
   String get formattedPhoneNumber => Formatter.formatPhoneNumber(phoneNumber);
 
   static List<String> nameParts(fullName) => fullName.split(" ");
-
-  static String generateUsername(fullName) {
-    List<String> nameParts = fullName.split(" ");
-    String firstName = nameParts[0].toLowerCase();
-    String lastName = nameParts.length > 1 ? nameParts[1].toLowerCase() : "";
-
-    String camelCaseUsername =
-        "$firstName$lastName"; // Combine first and last name
-    return camelCaseUsername;
-  }
 
   // Static function to create an empty user model.
   static UserModel empty() => UserModel(
