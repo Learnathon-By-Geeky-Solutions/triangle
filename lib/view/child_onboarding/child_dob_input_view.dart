@@ -14,24 +14,20 @@ class ChildDobInputView extends StatefulWidget {
 }
 
 class _ChildDobInputViewState extends State<ChildDobInputView> {
+  final controller = Get.find<ChildOnboardingController>();
+  
   @override
   Widget build(BuildContext context) {
-
-    final controller = Get.find<ChildOnboardingController>();
-
     return Scaffold(
       body: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        child: Padding(
-          padding: const EdgeInsets.all(Sizes.lg),
+        child: Padding(padding: const EdgeInsets.all(Sizes.lg),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'Enter Your Child\'s Birthday',
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
+              Text('Enter Your Child\'s Birthday',
+                style: Theme.of(context).textTheme.headlineMedium),
               const SizedBox(height: Sizes.spaceBtwItems),
               
               Form(
