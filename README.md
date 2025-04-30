@@ -86,7 +86,7 @@ To ensure a complete and professional CI workflow with SonarCloud, we applied th
 
 Here's a glimpse of our user-friendly interface that supports parents with clarity, warmth, and ease of use:
 
-<img src="https://raw.githubusercontent.com/Learnathon-By-Geeky-Solutions/triangle/feature/auth/assets/images/app_logo.png" alt="UI/UX Design Preview" width="400"/>
+<img src="https://raw.githubusercontent.com/Learnathon-By-Geeky-Solutions/triangle/refs/heads/feature/vaccination/assets/images/LittleSteps%20Scratch.png" alt="UI/UX Design Preview" width="400"/>
 
 ---
 
