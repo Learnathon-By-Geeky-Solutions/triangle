@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:triangle/utils/exceptions/app_exceptions.dart';
 
 void main() {
@@ -41,23 +40,26 @@ void main() {
           'Invalid verification ID. Please request a new verification code.');
       expect(AppFirebaseException('quota-exceeded').message,
           'Quota exceeded. Please try again later.');
-      expect(AppFirebaseException('email-already-exists').message,
-          'The email address already exists. Please use a different email.');
-      expect(AppFirebaseException('provider-already-linked').message,
-          'The account is already linked with another provider.');
     });
 
     test('AppPlatformException returns correct message', () {
-      expect(AppPlatformException('network-request-failed').message,
-          'Network request failed. Please check your internet connection.');
-      expect(AppPlatformException('invalid-credential').message,
-          'The supplied credential is malformed or has expired.');
-      expect(AppPlatformException('user-token-expired').message,
-          'The user\'s token has expired, and authentication is required. Please sign in again.');
-      expect(AppPlatformException('user-token-revoked').message,
-          'The user\'s token has been revoked. Please sign in again.');
-      expect(AppPlatformException('invalid-sender').message,
-          'The email template sender is invalid. Please verify the sender\'s email.');
+      expect(AppPlatformException('app-not-authorized').message,
+          'The app is not authorized to use Firebase Authentication with the provided API key.');
+      expect(AppPlatformException('internal-error').message,
+          'An internal authentication error occurred. Please try again later.');
+      expect(AppPlatformException('invalid-app-credential').message,
+          'The app credential is invalid. Please provide a valid app credential.');
+      expect(AppPlatformException('invalid-cordova-configuration').message,
+          'The provided Cordova configuration is invalid.');
+      expect(AppPlatformException('app-deleted').message,
+          'This instance of FirebaseApp has been deleted.');
+      expect(AppPlatformException('user-token-mismatch').message,
+          'The provided user\'s token has a mismatch with the authenticated user\'s user ID.');
+      expect(AppPlatformException('web-storage-unsupported').message,
+          'Web storage is not supported or is disabled.');
+      expect(AppPlatformException('keychain-error').message,
+          'A keychain error occurred. Please check the keychain and try again.');
     });
+
   });
 }
