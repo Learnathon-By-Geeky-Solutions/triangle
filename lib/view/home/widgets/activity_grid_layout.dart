@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:triangle/utils/constants/app_colors.dart';
 import 'package:triangle/utils/constants/sizes.dart';
+import 'package:triangle/view/vaccination/vaccination.dart';
 
 class ActivityGridLayout extends StatelessWidget {
   ActivityGridLayout({super.key});
@@ -25,20 +26,25 @@ class ActivityGridLayout extends StatelessWidget {
         childAspectRatio: .88,
       ),
       itemBuilder: (BuildContext context, int index) {
-        return Container(
-          padding: EdgeInsets.symmetric(vertical: Sizes.rmd),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(Sizes.xl),
-            color: Get.isDarkMode ? AppColor.surfaceDark : AppColor.floralWhite,
+        return GestureDetector(
+          onTap: () {
+            Get.to(() => const Vaccination());
+          },
+          child: Container(
+            padding: EdgeInsets.symmetric(vertical: Sizes.rmd),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(Sizes.xl),
+              color: Get.isDarkMode ? AppColor.surfaceDark : AppColor.floralWhite,
+            ),
+            child: Column(
+              children: [
+                Image.asset(activities[index][1]),
+                SizedBox(height: Sizes.rsm),
+                Text(activities[index][0],
+                  style: Theme.of(context).textTheme.headlineSmall),
+              ],
+            )
           ),
-          child: Column(
-            children: [
-              Image.asset(activities[index][1]),
-              SizedBox(height: Sizes.rsm),
-              Text(activities[index][0],
-                style: Theme.of(context).textTheme.headlineSmall),
-            ],
-          )
         );
       }
     );
