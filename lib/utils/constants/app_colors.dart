@@ -45,4 +45,5 @@ class AppColor {
   static const Color mediumSlateBlue = Color(0xFF7A7CEA);
   static const Color lightSlateBlue = Color(0xFF9396FB);
   static const Color lightCyan = Color(0xFFE6FAFF);
+  static const Color pigPink = Color(0xFFFFCEE6);
 }
