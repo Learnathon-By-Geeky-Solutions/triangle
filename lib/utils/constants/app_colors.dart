@@ -44,4 +44,5 @@ class AppColor {
   static const Color royalBlue = Color(0xFF575CE5);
   static const Color mediumSlateBlue = Color(0xFF7A7CEA);
   static const Color lightSlateBlue = Color(0xFF9396FB);
+  static const Color lightCyan = Color(0xFFE6FAFF);
 }
