@@ -137,34 +137,93 @@ Here's a glimpse of our user-friendly interface that supports parents with clari
 ## 📁 Project Structure
 
 <pre>
-lib/
-├── core/
-│   ├── constants/
-│   ├── device/
-│   ├── exceptions/
-│   ├── extensions/
-│   ├── formatters/
-│   ├── helpers/
-│   ├── http/
-│   ├── loaders/
-│   ├── local_storage/
-│   ├── logging/
-│   ├── popups/
-│   ├── routes/
-│   ├── theme/
-│   ├── utils/
-│   │   ├── validators.dart
-│   │   ├── snackbar_util.dart
-│   │   ├── language_switch.dart
-│   │   ├── theme_switch.dart
-│   │   └── web_view.dart
-├── model/
-├── view/
-├── viewmodel/
-├── services/
-├── widgets/
-├── app.dart
-├── firebase_options.dart
+Directory structure:
+└── lib/
+    ├── app.dart
+    ├── firebase_options.dart
+    ├── main.dart
+    ├── bindings/
+    │   └── general_bindings.dart
+    ├── data/
+    │   ├── models/
+    │   │   ├── child/
+    │   │   │   └── child_model.dart
+    │   │   └── user/
+    │   │       └── user_model.dart
+    │   └── repositories/
+    │       ├── auth/
+    │       │   ├── authentication_repository.dart
+    │       │   └── authentication_repository_impl.dart
+    │       ├── child/
+    │       │   ├── child_repository.dart
+    │       │   └── child_repository_impl.dart
+    │       └── user/
+    │           ├── mock_user_repository_impl.dart
+    │           ├── user_repository.dart
+    │           └── user_repository_impl.dart
+    ├── utils/
+    │   ├── constants/
+    │   │   ├── app_colors.dart
+    │   │   └── sizes.dart
+    │   ├── environment/
+    │   │   └── env.dart
+    │   ├── exceptions/
+    │   │   ├── app_exceptions.dart
+    │   │   └── format_exceptions.dart
+    │   ├── formatters/
+    │   │   └── formatter.dart
+    │   ├── helpers/
+    │   │   ├── age_calculator.dart
+    │   │   ├── helper_functions.dart
+    │   │   └── network_manager.dart
+    │   ├── loaders/
+    │   │   ├── animation_loader.dart
+    │   │   └── circular_loader.dart
+    │   ├── popups/
+    │   │   ├── full_screen_loader.dart
+    │   │   └── loaders.dart
+    │   ├── theme/
+    │   │   ├── theme.dart
+    │   │   ├── extensions/
+    │   │   │   └── custom_color_extension.dart
+    │   │   └── widget_themes/
+    │   │       ├── app_bar_theme.dart
+    │   │       ├── bottom_navigation_bar_theme.dart
+    │   │       ├── checkbox_theme.dart
+    │   │       ├── filled_button_theme.dart
+    │   │       ├── outlined_button_theme.dart
+    │   │       ├── text_field_theme.dart
+    │   │       └── text_theme.dart
+    │   ├── translations/
+    │   │   └── localization_service.dart
+    │   └── validators/
+    │       └── app_validator.dart
+    ├── view/
+    │   ├── auth/
+    │   │   ├── email_verification_view.dart
+    │   │   ├── login_view.dart
+    │   │   └── register_view.dart
+    │   ├── child_onboarding/
+    │   │   ├── child_dob_input_view.dart
+    │   │   ├── child_name_input_view.dart
+    │   │   └── child_stats_input_view.dart
+    │   └── home/
+    │       ├── home_view.dart
+    │       └── widgets/
+    │           ├── activity_grid_layout.dart
+    │           ├── age_grid_layout.dart
+    │           └── vaccine_stack_layout.dart
+    └── view_model/
+        ├── auth/
+        │   ├── initial_screen_redirect.dart
+        │   ├── login_controller.dart
+        │   └── register_controller.dart
+        ├── child/
+        │   └── child_controller.dart
+        ├── child_onboarding/
+        │   └── child_onboarding_controller.dart
+        └── home/
+            └── home_controller.dart
 </pre>
 
 ---
