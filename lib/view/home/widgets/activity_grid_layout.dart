@@ -8,7 +8,7 @@ class ActivityGridLayout extends StatelessWidget {
   ActivityGridLayout({super.key});
 
   final List activities = [
-    ["Feeding", "assets/images/vaccine.png"],
+    ["Feeding", "assets/images/baby_feeding.png"],
     ["Sleeping", "assets/images/baby_sleep.png"],
     ["Vaccination", "assets/images/vaccine.png"],
     ["Milestone", "assets/images/milestone.png"],
