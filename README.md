@@ -254,16 +254,7 @@ Directory structure:
    flutter run
    ```
 
-### Development Setup
-- For Flutter setup in Android Studio or VS Code, refer to the official [Flutter installation guide](https://flutter.dev/docs/get-started/install).
-
-## Development Guidelines
-1. Create feature branches for new features or bug fixes.
-2. Make small, focused commits.
-3. Write descriptive commit messages that explain the changes made.
-4. Create pull requests for review before merging to the main branch.
-
-## 📚 Resources
-- [Project Documentation](docs/)
-- [Development Setup](docs/setup.md)
-- [Contributing Guidelines](CONTRIBUTING.md)
+---
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Learnathon-By-Geeky-Solutions/triangle/feature/auth/assets/images/app_logo.png" alt="Little Steps Banner"/>
+</div>
