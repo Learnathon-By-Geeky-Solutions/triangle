@@ -256,5 +256,5 @@ Directory structure:
 
 ---
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Learnathon-By-Geeky-Solutions/triangle/feature/auth/assets/images/app_logo.png" alt="Little Steps Banner"/>
+  <img src="https://raw.githubusercontent.com/minhazul73/LittleSteps/refs/heads/main/assets/images/banner.jpg" alt="Little Steps Banner"/>
 </div>
