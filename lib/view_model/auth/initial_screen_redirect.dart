@@ -8,6 +8,8 @@ import 'package:triangle/view/child_onboarding/child_name_input_view.dart';
 import 'package:triangle/view/home/home_view.dart';
 
 class InitialScreenRedirect extends GetxController {
+  static InitialScreenRedirect get instance => Get.find<InitialScreenRedirect>();
+  
   final deviceStorage = GetStorage();
 
   @override
