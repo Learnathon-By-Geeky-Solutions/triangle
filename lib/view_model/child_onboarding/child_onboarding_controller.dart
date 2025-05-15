@@ -7,7 +7,7 @@ import 'package:triangle/data/repositories/child/child_repository.dart';
 import 'package:triangle/utils/helpers/network_manager.dart';
 import 'package:triangle/utils/popups/full_screen_loader.dart';
 import 'package:triangle/utils/popups/loaders.dart';
-import 'package:triangle/view/home/home_view.dart';
+import 'package:triangle/view_model/auth/initial_screen_redirect.dart';
 import '../../utils/formatters/formatter.dart';
 
 class ChildOnboardingController extends GetxController {
@@ -74,7 +74,7 @@ class ChildOnboardingController extends GetxController {
 
       AppLoaders.successSnackBar(title: "Success", message: "Child data saved successfully");
 
-      Get.offAll(() => const HomeView()); 
+      InitialScreenRedirect.instance.screenRedirect();
     } catch (e) {
       FullScreenLoader.stopLoading();
 
