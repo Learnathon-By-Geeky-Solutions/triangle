@@ -69,8 +69,8 @@ jobs:
         with:
           args: >
             -Dsonar.host.url=https://sonarcloud.io
-            -Dsonar.projectKey=Learnathon-By-Geeky-Solutions_triangle
-            -Dsonar.organization=learnathon-by-geeky-solutions
+            -Dsonar.projectKey=minhazul73_LittleSteps
+            -Dsonar.organization=minhazul73
             -Dsonar.sources=lib/
             -Dsonar.tests=test
             -Dsonar.java.version=17
