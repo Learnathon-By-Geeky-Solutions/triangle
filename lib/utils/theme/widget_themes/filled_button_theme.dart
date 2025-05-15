@@ -11,8 +11,6 @@ class AppFilledButtonTheme {
       backgroundColor: AppColor.primary,
       // foregroundColor: AppColor.light,
       disabledBackgroundColor: AppColor.darkGrey,
-      // disabledForegroundColor: AppColor.darkGrey,
-      side: const BorderSide(color: AppColor.primary),
       minimumSize: const Size(Sizes.buttonWidth, Sizes.buttonHeight),
       textStyle: const TextStyle(
           fontSize: 16, color: AppColor.textWhite, fontWeight: FontWeight.w600),
@@ -26,8 +24,6 @@ class AppFilledButtonTheme {
       backgroundColor: AppColor.primary,
       foregroundColor: AppColor.light,
       disabledBackgroundColor: AppColor.darkGrey,
-      // disabledForegroundColor: AppColor.darkGrey,
-      side: const BorderSide(color: AppColor.primary),
       minimumSize: const Size(Sizes.buttonWidth, Sizes.buttonHeight),
       textStyle: const TextStyle(
           fontSize: 16, color: AppColor.textWhite, fontWeight: FontWeight.w600),
