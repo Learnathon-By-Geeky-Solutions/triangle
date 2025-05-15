@@ -52,14 +52,18 @@ class VaccineStackLayout extends StatelessWidget {
                   children: [
                     SvgPicture.asset("assets/svg/clarity_clock-line.svg"),
                     const SizedBox(width: Sizes.sm),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("OPV-3",
-                          style: Theme.of(context).textTheme.headlineLarge!.apply(color: AppColor.light),),
-                        Text("4th dose of Oral Polio Vaccine",
-                          style: Theme.of(context).textTheme.titleSmall!.apply(color: AppColor.light),),
-                      ],
+                    Flexible(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("OPV-3",
+                            style: Theme.of(context).textTheme.headlineLarge!.apply(color: AppColor.light),),
+                          Text("4th dose of Oral Polio Vaccine",
+                            style: Theme.of(context).textTheme.titleSmall!.apply(color: AppColor.light),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),
