@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:triangle/utils/constants/app_colors.dart';
 import 'package:triangle/utils/constants/sizes.dart';
+
+import 'vaccine_list_view.dart';
 
 class Vaccination extends StatelessWidget {
   const Vaccination({super.key});
@@ -170,132 +173,120 @@ class Vaccination extends StatelessWidget {
                     }
                   ),
                 ),
-                
+
+                const SizedBox(height: Sizes.sm),
+
+                Padding(
+                  padding: const EdgeInsets.only(right: Sizes.md),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric( horizontal: Sizes.sm, vertical: Sizes.xs),
+                    decoration: BoxDecoration(
+                      color: AppColor.secondary,
+                      borderRadius: BorderRadius.circular(Sizes.sm),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text('See All',
+                          style: Theme.of(context).textTheme.bodySmall!.copyWith(color: AppColor.white, fontWeight: FontWeight.bold)),
+                        const SizedBox(width: Sizes.xs),
+                        const Icon(Icons.arrow_forward, color: AppColor.white, size: 14),
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
 
             
-            const SizedBox(height: 16),
+            const SizedBox(height: Sizes.md),
 
             // Upcoming Vaccines Section
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Row(
+                const Icon(Icons.hourglass_bottom, color: AppColor.black),
+                const SizedBox(width: Sizes.xs),
+                Text('Upcoming Vaccine Doses',
+                  style: Theme.of(context).textTheme.headlineSmall),
+              ],
+            ),
+
+            const SizedBox(height: Sizes.md),
+
+            // Upcoming Vaccine Table
+            Table(
+              columnWidths: const {
+                0: FlexColumnWidth(2),
+                1: FlexColumnWidth(1),
+              },
+              border: const TableBorder(
+                horizontalInside: BorderSide(color: AppColor.grey),
+              ),
+              children: [
+                // Header
+                TableRow(
                   children: [
-                    Icon(Icons.hourglass_bottom, color: AppColor.black),
-                    SizedBox(width: 8),
-                    Text(
-                      'Upcoming Vaccine Doses',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: Sizes.sm),
+                      child: Text('Vaccines',
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: Sizes.sm),
+                      child: Container(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          'Due Age',
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
                       ),
                     ),
                   ],
                 ),
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    backgroundColor: AppColor.secondary, // solid blue background like in your image
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                // Row 1
+                TableRow(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8),
+                      child: Text('Measles-Rubella (1st dose)'),
                     ),
-                  ),
-                  child: const Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        'See All',
-                        style: TextStyle(
-                          color: AppColor.white,
-                          fontWeight: FontWeight.bold,
-                        ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      child: Container(
+                        alignment: Alignment.centerRight,
+                        child: const Text('9 Months'),
                       ),
-                      SizedBox(width: 4),
-                      Icon(
-                        Icons.arrow_forward,
-                        color: AppColor.white,
-                        size: 14,
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-
+                // Row 2
+                TableRow(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8),
+                      child: Text('Measles-Rubella (2nd dose)'),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      child: Container(
+                        alignment: Alignment.centerRight,
+                        child: const Text('15 Months'),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
 
-            const SizedBox(height: 16),
+            const SizedBox(height: Sizes.sm),
 
-            // Upcoming Vaccine Table
-            Container(
-              child: Table(
-                columnWidths: const {
-                  0: FlexColumnWidth(2),
-                  1: FlexColumnWidth(1),
-                },
-                border: const TableBorder(
-                  horizontalInside: BorderSide(color: AppColor.grey),
-                ),
-                children: [
-                  // Header
-                  TableRow(
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 8),
-                        child: Text(
-                          'Vaccines',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8),
-                        child: Container(
-                          alignment: Alignment.centerRight,
-                          child: const Text(
-                            'Due Age',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  // Row 1
-                  TableRow(
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 8),
-                        child: Text('Measles-Rubella (1st dose)'),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8),
-                        child: Container(
-                          alignment: Alignment.centerRight,
-                          child: const Text('9 Months'),
-                        ),
-                      ),
-                    ],
-                  ),
-                  // Row 2
-                  TableRow(
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 8),
-                        child: Text('Measles-Rubella (2nd dose)'),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8),
-                        child: Container(
-                          alignment: Alignment.centerRight,
-                          child: const Text('15 Months'),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            FilledButton.icon(
+              onPressed: () { Get.to(() => const VaccineListView()); }, 
+              style: FilledButton.styleFrom(backgroundColor: AppColor.secondary),
+              icon: const Icon(Icons.add), 
+              label: const Text("Add More"),
+            )
           ],
         ),
       ),
