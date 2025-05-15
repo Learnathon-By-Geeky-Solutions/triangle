@@ -20,7 +20,7 @@ class AppTextTheme {
 
     labelLarge: const TextStyle().copyWith(fontSize: Sizes.rfs12, fontWeight: FontWeight.normal, color: AppColor.dark),
     labelMedium: const TextStyle().copyWith(fontSize: Sizes.rfs12, fontWeight: FontWeight.normal, color: AppColor.dark),
-    labelSmall: const TextStyle().copyWith(fontSize: Sizes.rfs10, fontWeight: FontWeight.normal, color: AppColor.dark.withValues(alpha: 0.5)),
+    labelSmall: const TextStyle().copyWith(fontSize: Sizes.rfs10, fontWeight: FontWeight.normal,  color: AppColor.dark.withValues(alpha: 0.5)),
   );
 
   /// Customizable Dark Text Theme
